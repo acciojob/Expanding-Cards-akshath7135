@@ -1,4 +1,3 @@
-//your JS code here. If required.
 // Get all panels
 const panels = document.querySelectorAll('.panel');
 
@@ -9,4 +8,15 @@ function removeActiveClasses() {
     });
 }
 
-// Function to add active
+// Function to handle panel click events
+function activatePanel(panel) {
+    removeActiveClasses();
+    panel.classList.add('active');
+}
+
+// Add click event listener to all panels
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        activatePanel(panel);
+    });
+});
